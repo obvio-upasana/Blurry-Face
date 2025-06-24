@@ -8,7 +8,7 @@ if not os.path.exists(output):
     os.makedirs(output)
 
 # Read Image
-img_path='pranav2.jpg'
+img_path='image_name.jpg'
 img=cv.imread(img_path)
 
 H, W, _ = img.shape 
@@ -37,7 +37,7 @@ with face_detect.FaceDetection(model_selection=0, min_detection_confidence=0.5) 
 
             # Bluring the detected face
             img[y1: y1+h, x1:x1+w, :]  = cv.blur(img[y1: y1+h, x1:x1+w, :], (60,40)) #Blurring the exact area of the detected face faound in the bounding box
-    cv.imshow('FAce', img)
+    cv.imshow('Blurred-Face', img)
     cv.waitKey(0)
 # To save the img
 cv.imwrite(os.path.join (output, 'output.png'), img) #Saving the image with blurred face
